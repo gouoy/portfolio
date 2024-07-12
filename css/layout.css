@@ -548,6 +548,7 @@ section>h3{
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.8);
+  display:none;
 }
 .popClosed{
   background: rgba(0, 0, 0, 0);
