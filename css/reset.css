@@ -1,0 +1,34 @@
+:root{
+  --darkMode-fontIvory: #ece7e1;
+  --darkMode-bgBlack: #222;
+  --lightMode-fontBlack: #222;
+  --lightMode-bgIvory: #ece7e1; 
+}
+
+body{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family:  Silkscreen;
+  font-size:30px;
+  background-color:var(--lightMode-bgIvory);
+  color:#222;
+  overflow-x: hidden;
+}
+
+
+strong, em, b, h1, h2, h3, h4, h5, h6{
+  display: block;
+  font-style: normal;
+}
+button, input{
+  outline:none;
+  border:none;
+  font-style:normal;
+}
+a{
+  text-decoration: none;
+  font-style:normal;
+}
+li{list-style-type: none;}
+

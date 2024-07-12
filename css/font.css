@@ -1,0 +1,158 @@
+/* Galmuri ----------------------------------------------------------------------------*/
+@import url('https://fastly.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
+
+@font-face {
+  font-family: Galmuri9;
+  font-style: normal;
+  font-stretch: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Galmuri9 Regular'),
+  url('./Galmuri9.woff2') format('woff2'),
+  url('./Galmuri9.ttf') format('truetype');
+}
+@font-face {
+  font-family: Galmuri7;
+  font-style: normal;
+  font-stretch: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Galmuri7 Regular'),
+  url('./Galmuri7.woff2') format('woff2'),
+  url('./Galmuri7.ttf') format('truetype');
+}
+/* ----------------------------------------------------------------------------------------- */
+/* Silkscreen */
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+/* 
+.silkscreen-regular {
+  font-family: "Silkscreen", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.silkscreen-bold {
+  font-family: "Silkscreen", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+*/
+/* ----------------Pretendard--------------------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+/* font-family:  'Pretendard-Regular'----------------------------------------------------------------------- */
+/* G market sans ----------------------------------------------------------------------------------------------*/
+@font-face{
+  font-family: Gmarket Sans B;
+  src: url('../font/GmarketSansBold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face{
+  font-family: Gmarket Sans L;
+  src: url('../font/GmarketSansLight.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face{
+  font-family: Gmarket Sans M;
+  src: url('../font/GmarketSansMedium.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+/* 
+font-family: Gmarket Sans B;
+font-family: Gmarket Sans L; 
+font-family: Gmarket Sans M;*/
+/* Gotham--------------------------------------------------------------------- */
+@font-face{
+  font-family: Gotham XB;
+  src:url('/font/GothamBlack.woff') format('woff');
+  font-weight:800;
+  font-style:normal; 
+}
+@font-face{
+  font-family: Gotham B;
+  src:url('/font/GothamBold.woff') format('woff');
+  font-weight:700;
+  font-style:normal; 
+}
+@font-face{
+  font-family: Gotham R;
+  src:url('/font/GothamBook.woff') format('woff');
+  font-weight:600;
+  font-style:normal; 
+}
+@font-face{
+  font-family: Gotham L;
+  src:url('/font/GothamLight.woff') format('woff');
+  font-weight:500;
+  font-style:normal; 
+}
+/*
+font-family:  Gotham XB;
+font-family:  Gotham B;
+font-family:  Gotham R;
+font-family:  Gotham L;
+*/
+/* 
+font-family: SCdream 1;
+*/
+@font-face{
+  font-family: SCdream 1; 
+  src:url('/font/SCDream1.woff') format('woff');
+  font-weight:100;
+  font-style:normal; 
+}
+@font-face{
+  font-family: SCdream 2; 
+  src:url('/font/SCDream2.woff') format('woff');
+  font-weight:200;
+  font-style:normal; 
+}
+@font-face{
+  font-family: SCdream 3; 
+  src:url('/font/SCDream3.woff') format('woff');
+  font-weight:300;
+  font-style:normal; 
+}
+@font-face{
+  font-family: SCdream 4; 
+  src:url('/font/SCDream4.woff') format('woff');
+  font-weight:400;
+  font-style:normal; 
+}
+@font-face{
+  font-family: SCdream 5; 
+  src:url('/font/SCDream5.woff') format('woff');
+  font-weight:500;
+  font-style:normal; 
+}
+@font-face{
+  font-family: SCdream 6; 
+  src:url('/font/SCDream6.woff') format('woff');
+  font-weight:600;
+  font-style:normal; 
+}
+@font-face{
+  font-family: SCdream 7; 
+  src:url('/font/SCDream7.woff') format('woff');
+  font-weight:700;
+  font-style:normal; 
+}
+@font-face{
+  font-family: SCdream 8; 
+  src:url('/font/SCDream8.woff') format('woff');
+  font-weight:700;
+  font-style:normal; 
+}
+@font-face{
+  font-family: SCdream 9; 
+  src:url('/font/SCDream9.woff') format('woff');
+  font-weight:900;
+  font-style:normal; 
+}

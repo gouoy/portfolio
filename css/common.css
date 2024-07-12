@@ -1,0 +1,32 @@
+#langActive{background-color: #F58500;}
+
+/* nightmode */
+/* 
+backgroundcolor:#222; 
+-> body, 
+
+backgroundcolor:#ece7e1;
+-> .logo img, #btnActive, .mode button:first-of-type, , .lang button , .contents article p:hover , 
+
+
+color:#ece7e1;
+-> .contents article p:hover 
+
+color:#222; 
+
+
+border:1px solid #ece7e1; 
+-> main , .btnNav a , .custom p , .custom p button , .square span
+
+
+svg-logo square ->
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #222222;
+      }
+
+
+*/
