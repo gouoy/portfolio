@@ -548,9 +548,11 @@ section>h3{
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.8);
-  display:none;
 }
-dialog:-internal-dialog-in-top-layer::backdrop {
+.popClosed{
+  background: rgba(0, 0, 0, 0);
+  opacity:0; visibility: hidden; display: none;}
+/* dialog:-internal-dialog-in-top-layer::backdrop {
   position: fixed;
   inset: 0px;
   background: rgba(0, 0, 0, 0.9);
@@ -562,7 +564,7 @@ dialog:-internal-dialog-in-top-layer::backdrop {
   bottom: 0px;
   left: 0px;
   background: rgba(0, 0, 0, 0.9);
-}
+} */
 .popBody{
   max-height: 95%;
   overflow:auto;
@@ -579,10 +581,10 @@ dialog:-internal-dialog-in-top-layer::backdrop {
   scrollbar-width: none;
 }
 li.btnSection{
-  border:1px solid black;
+  /* border:1px solid black; */
   position:fixed;
-  right:3rem;
-  top:3rem;
+  right:4rem;
+  top:7rem;
 }
 .btns{
   .closed{
@@ -596,3 +598,65 @@ li.btnSection{
     bottom:1rem;
   }
 }
+/* ____________________________________ */
+.popUp dialog figure{
+  h4{font-size:1.5rem;}
+  h2{font-size:2.3rem;}
+
+  hr{color:#222;}
+ .inform{
+  display:flex;
+  justify-content: space-around;
+  text-align: center;
+ }
+ .mainImg{
+  width:60rem;
+  height:40rem;
+  border: 1px solid #000;
+  margin: 5rem auto;
+ }
+}
+.popUp dialog figure .inform span{
+  font-size:1.5rem;
+  font-family:Gotham XL;
+  img{height:1.5rem;}
+}
+.popUp dialog figure .inform strong{
+  font-family:Gotham XB;
+  display:inline-block;
+  padding: 0 2rem;
+}
+.pop ul{
+  margin:3rem auto;
+  text-align:center;
+  font-family: Gotham XB;
+}
+.pop ul>li{
+  font-family: Gotham B; 
+  margin:4rem 0;
+  display:flex;
+  justify-content: center;
+  text-align:center;
+}
+.pop ul>li>span{
+  display:inline-block;
+  margin:0 4rem;
+  font-size:1.7rem;
+  padding:0.5rem 1.2rem;
+  border-radius: 3rem;
+  background-color: var(--orange);
+}
+
+.pop .description{
+  margin: 2rem 7rem;
+  padding:3rem 7rem 3rem 1rem;
+  border: 1px solid #222;
+  border-color: #222 transparent;
+  font-size:1.5rem;
+  strong{
+    font-family:Gotham B;
+    display:block;
+    margin: 1rem 0;
+  }
+}
+/*  */

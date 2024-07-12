@@ -139,3 +139,21 @@ profileBars.forEach(item => {
 });
 
 /* 모달 창 생성 ________________________ */
+const item = document.querySelectorAll('.itemlist li')
+const popUp = document.querySelector('.popBody');
+const modal = document.querySelector('.pop') 
+
+item.forEach(function(li){
+  li.addEventListener('click',(e)=>{
+    popUp.style.display = 'flex';
+  });
+})
+
+let closedBtn = document.querySelector('.closed');
+closedBtn.addEventListener('click',(e)=>{
+  popUp.classList.add = 'popClosed';
+  popUp.style.display = 'none';
+  modal.removeAttribute = 'open';
+  modal.getAttribute = 'close';
+
+});
