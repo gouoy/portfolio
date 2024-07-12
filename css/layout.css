@@ -450,6 +450,13 @@ section>h3{
 /* Publishing */
 .four .titleLine span:first-of-type{color:var(--orange);}
 /* Design */
+/* UIUX DESIGN ________________________________________________ */
+.gridContainer{
+  display:grid;
+  width:70vw;
+  margin: 2rem 5rem 0 23rem; 
+}
+
 /* _________________________CONTACT_______________________ */
 .contact{
   text-align: center;
@@ -540,6 +547,7 @@ section>h3{
   left:50rem;
 
 }
+
 /* POPUP___________________________________________________________ */
 .popUp{
   position: fixed;
