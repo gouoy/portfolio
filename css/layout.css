@@ -39,7 +39,7 @@ button:hover, a:hover{
   cursor: none;
 }
 /*Loading_______________________________ */
-#loading{
+#preloader{
   text-align: center;
   height:100vh;
   margin:auto;
@@ -50,7 +50,7 @@ button:hover, a:hover{
   background-color:#ECE7E1;
   z-index: 10;
 }
-#loading span{font-size:60px;}
+#preloader span{font-size:60px;}
 
 /* HOME ______Layout&Surrounded______________________ */
 #wrap{
@@ -582,11 +582,16 @@ section>h3{
 .detailImg{
   width:5300px; 
   overflow-x: scroll;
-  border: 1px solid #000;
   display:flex;
   justify-content: space-around;
   align-items: center;
 }
+.detailImg.fstvl{
+  width:4000px;
+  overflow-x: scroll;
+  img{height:300px;}
+}
+
 /* _________________________CONTACT_______________________ */
 .contact{
   text-align: center;
