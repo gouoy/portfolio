@@ -86,7 +86,12 @@ if(scroller.scrollTop > 820){
   square.style.display = "flex"; 
 }; */
 
+/* pagination */
+const pageCircle = document.querySelectorAll('.btnNav a');
+const btnActive = document.querySelector('#btnActive'); 
 
+
+/* ____________________________________t_______________________________________________________ */
 /* 햄버거 메뉴 열고 닫기  */
 
 
@@ -138,9 +143,28 @@ profileBars.forEach(item => {
   });
 });
 
+/* Graphic Design , UIUX Design 옮기기 옮기기 옮기기..  */
+const tabMenu = document.querySelector('.five .titleLine');
+const tab = document.querySelectorAll('.five .tab');
+const uiuxForm = document.querySelector('.form1');
+const flexContainer = document.querySelector('.flexContainer');
+const tabtive = document.querySelector('.tabtive'); 
+
+const uiuxNext = uiuxForm.classList.add('.nextForm')
+const uiuxContainer = flexContainer.classList.add('.nextPage')
+
+tabMenu.addEventListener('click',(e)=>{
+  tab.forEach(function(e){
+    e.classList.remove('tabtive');
+  });
+  e.target.classList.add('tabtive');
+  uiuxForm.classList.toggle('nextForm');
+  flexContainer.classList.toggle('nextPage');
+});
+
 /* 모달 창 생성 ________________________ */
 const item = document.querySelectorAll('.itemlist li')
-const popUp = document.querySelector('.popBody');
+const popUp = document.querySelector('.popUp');
 const modal = document.querySelector('.pop') 
 
 item.forEach(function(li){
@@ -157,3 +181,111 @@ closedBtn.addEventListener('click',(e)=>{
   modal.getAttribute = 'close';
 
 });
+
+
+
+/* 그래픽디자인 팝업창 ... *//* 
+(function(){
+  const graphicChapter = document.querySelector('.form2');
+  const graphicList = document.querySelectorAll(".form2 .flexItem"); 
+  const graphicPop = document.querySelector('.popBody.design');
+  const toNext = document.querySelector('.prevBtn');
+  const toPrev = document.querySelector('.nextBtn');
+
+  graphicList.forEach(){
+    graphicList.addEventListener('click',()=>{
+      graphicPop.classList.add('active');
+    })
+  }
+
+  let index = 0;
+  let lastIndex = graphicList.length - 1;
+  const graphicImages = [
+    '/image/graphicList1.png',
+    '/image/graphicList2.png',
+    '/image/graphicList3.png',
+    '/image/graphicList4.png',
+    '/image/graphicList5.png',
+    '/image/graphicList6.png',
+    '/image/graphicList7.png',
+    '/image/graphicList8.png',
+    '/image/graphicList9.png'
+];
+}); 
+ */
+
+/* PLANNING_______________________________ */
+//01-클릭할 부분 모두 불러옴
+const buttons = document.querySelectorAll('.headline');
+
+//02-forEach 메서드로 각각의 버튼을 순회하면서 클릭이벤트를 등록
+buttons.forEach((btn)=>{
+  btn.addEventListener("click",()=>{
+    const clickedPlan = btn.parentNode;//버튼자체가아닌 부모에 active클래스를 토글
+    const isActive =clickedPlan.classList.contains("liActive");
+    removeActiveClasses();
+    if(!isActive){//active클래스가 없을 떄...즉 닫힌항목일때 active 클래스를 추가해 활성화
+      
+      clickedPlan.classList.add("liActive");
+    }
+  })
+})
+
+//03-다른항목을 클릭했을 때 열려있는 항목을 닫을 수 있도록 active 클래스를 제거
+function removeActiveClasses(){
+  buttons.forEach((btn)=>{
+    btn.parentNode.classList.remove("liActive");
+  })
+}
+
+/* (function(){
+  const planBtn = document.querySelectorAll('.details div>button');
+
+
+  planBtn.forEach((button)=>{
+    button.addEventListener('click',()=>{
+      const Activate = planBtn.classList.contains('active');
+      removeOthersClass(); 
+      if(!Activate){planBtn.classList.add("Activate")};
+    })
+  
+    function removeOthersClass(){
+      planBtn.forEach((btn)=>{
+        btn.classList.remove("Activate");
+      })
+    } bn
+  })
+}) */
+  const planBtn = document.querySelectorAll('.details div>button');
+  const Imgs = document.querySelectorAll('.detailImg'); 
+  planBtn.forEach(button => {
+  button.addEventListener('click', function() {
+      // 모든 형제 버튼에서 'active' 클래스 제거
+      document.planBtn.forEach(btn => {
+          btn.classList.remove('active');
+      });
+      // 클릭된 버튼에 'active' 클래스 추가
+      this.classList.add('active');
+      // 이미지 변경
+
+      Imgs.forEach(img => {
+        const tempSrc = img.getAttribute('src');
+        img.setAttribute('src', img.getAttribute('data-src'));
+        img.setAttribute('data-src', tempSrc);
+      }); 
+  });
+});
+/* planning slide__________________ */
+// const swiper = new Swiper(".mySwiper", {
+//   slidesPerView: 3,
+//   centeredSlides: true,
+//   spaceBetween: 30,
+//   pagination: {
+//     el: ".swiper-pagination",
+//     type: "fraction",
+//   },
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev",
+//   },
+// });

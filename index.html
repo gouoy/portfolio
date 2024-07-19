@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gayeong_K.com</title>
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="icon" href="./image/titi.png" type="image/x-icon"/>
 </head>
 <body >
@@ -15,20 +16,20 @@
   <div id="wrap">
     <p class="cursorFollower"><img src="/image/mousefollower.svg" alt=""></p>
     <div class="logo"><img src="/image/Logo_square.svg" alt="logo"></div>
-      <span>front-End</span>
-      <span>About</span>
-      <span>Design</span>
-      <span>Publishing</span>
+      <span><a href="#works">front-End</a></span>
+      <span><a href="#about">About</a></span>
+      <span><a href="#uiux">Design</a></span>
+      <span><a href="#publishing">Publishing</a></span>
       <div class="menuHam">
         <p class="hamburger"><img src="image/hamburger.png" alt=""></p>
         <ul class="menuList">
-          <li>About</li>
+          <li><a href="#about">About</a></li>
           <li>Works</li>
-          <li>front-end</li>
-          <li>publishing</li>
-          <li>design</li>
-          <li>planning</li>
-          <li>contact</li>
+          <li><a href="#works">front-end</a></li>
+          <li><a href="#publishing">publishing</a></li>
+          <li><a href="#uiux">design</a></li>
+          <li><a href="#planning">planning</a></li>
+          <li><a href="contact">contact</a></li>
         </ul>
       </div>
     <div class="btnNav">
@@ -148,7 +149,7 @@
           </ul>
         </div>
       </section>
-      <section class="worksPb four pf">
+      <section class="worksPb four pf" id="publishing">
         <h3>Works</h3>
         <figure  class="titleLine"> 
           <img src="/image/star.svg" alt="star">
@@ -220,26 +221,116 @@
       <section class="worksUiux five pf">
         <h3>Works</h3>
         <figure  class="titleLine"> 
-          <img src="/image/star.svg" alt="star">
-          <span>UIUX Design</span>
-          <img src="/image/star.svg" alt="star">
-          <span>Graphic Design</span>
-          <img src="/image/star.svg" alt="star">
+          <div class="tab tabtive">
+            <img src="/image/star.svg" alt="star">
+            <span>UIUX Design</span>
+            <img src="/image/star.svg" alt="star">
+          </div>
+          <div class="tab">
+            <span>Graphic Design</span>
+            <img src="/image/star.svg" alt="star">
+          </div>
         </figure>
-        <div class="gridContainer uiux">
-          <div class="gridItem"><img src="/image/uiux1.png" alt=""></div>
-          <div class="gridItem"><img src="/image/uiux2.png" alt=""></div>
-          <div class="gridItem"><img src="/image/uiux3.png" alt=""></div>
-          <div class="gridItem"><img src="/image/uiux4.png" alt=""></div>
-          <div class="gridItem"><img src="/image/uiux5.jpg" alt=""></div>
-        </div>
+        <div class="flexContainer uiux" id="uiux">
+          <div class="form1">
+            <div class="flexItem">
+              <img src="/image/uiux1.png" alt="" />
+              <p></p>
+            </div>
+            <div class="flexItem"><img src="/image/uiux2.png" alt=""><p></p></div>
+            <div class="flexItem"><img src="/image/uiux3.png" alt=""><p></p></div>
+            <div class="flexItem"><img src="/image/uiux4.png" alt=""><p></p></div>
+            <div class="flexItem"><img src="/image/uiux5.jpg" alt=""><p></p></div>
+            <div class="flexItem"><img src="/image/uiux6.jpg" alt=""><p></p></div>
+          </div>
+          <div class="form2">
+            <div class="flexItem"><img src="/image/graphic1.png" alt=""><p></p></div>
+            <div class="flexItem"><img src="/image/graphic2.png" alt=""><p></p></div>
+            <div class="flexItem"><img src="/image/graphic3.jpg" alt=""><p></p></div>
+            <div class="flexItem"><img src="/image/graphic4.png" alt=""><p></p></div>
+            <div class="flexItem"><img src="/image/graphic5.png" alt=""><p></p></div>
+            <div class="flexItem"><img src="/image/graphic6.png" alt=""><p></p></div>
+            <div class="flexItem"><img src="/image/graphic7.png" alt=""><p></p></div>
+            <div class="flexItem"><img src="/image/graphic8.png" alt=""><p></p></div>
+            <div class="flexItem"><img src="/image/graphic9.jpg" alt=""><p></p></div>
+          </div>
+          </div>
+          <div class="popUp design">
+            <dialog open class="popBody design">
+              <figure class="pop">
+                <p>
+                  <h4>Graphic Design</h4>
+                  <h2>My Diary</h2>
+                  <hr>
+                  <p class="inform">
+                    <img src="/image/graphicList6.png" alt="">
+                  </p>
+              </figure>
+              <ul>
+                <li class="btnSection">
+                  <img class="prevBtn" src="/image/prevBtn.svg" alt="">
+                  <img src="/image/border.svg" alt="">
+                  <img src="/image/nextBtn.svg" alt="" class="nextBtn">
+                </li>
+              </ul>
+              <div class="btns">
+                <img class="closed" src="/image/closed.svg" alt="">
+                <img class="toTop" src="/image/topBtn.svg" alt="">
+              </div>
+            </dialog>
+          </div>
       </section>
       
       <div class="gridContainer graphic"></div>
-      <!---
-      <section class="worksPlanning six pf">
+      <section class="worksPlanning six pf" id="planning">
         <h3>Works</h3>
-      </section> -->
+        <section  class="titleLine"> 
+          <div class="tab">
+            <img src="/image/star.svg" alt="star">
+            <span>Web Planning</span>
+            <img src="/image/star.svg" alt="star">
+          </div>
+        </section>
+        <div class="listRows listPlan item">
+          <ul class="rows listPlanning itemList">
+            <li class="clickedPlan">
+              <div class="headline">
+                Portfolio Planning
+              </div>
+              <div class="details">
+                <div>
+                  <button class="btn01 active">Research Report</button>
+                  <button class="btn02">Layout Scenario</button>
+                </div>
+                <div class="detailImg swiper-wrapper" tabindex="0">
+                  <img src="./image/planning1_01.png" alt="" class="swiper-slide" data-src="./image/planning2_01.png">
+                  <img src="./image/planning1_02.png" alt="" class="swiper-slide" data-src="./image/planning2_02.png">
+                  <img src="./image/planning1_03.png" alt="" class="swiper-slide" data-src="./image/planning2_03.png">
+                  <img src="./image/planning1_04.png" alt="" class="swiper-slide" data-src="./image/planning2_04.png">
+                  <img src="./image/planning1_05.png" alt="" class="swiper-slide" data-src="./image/planning2_05.png">
+                  <img src="./image/planning1_06.png" alt="" class="swiper-slide" data-src="./image/planning2_06.png">
+                  <img src="./image/planning1_07.png" alt="" class="swiper-slide" data-src="./image/planning2_07.png">
+                  <img src="./image/planning1_08.png" alt="" class="swiper-slide" data-src="./image/planning2_08.png">
+                  <img src="./image/planning1_09.png" alt="" class="swiper-slide" data-src="./image/planning2_09.png">
+                </div>
+              </div>
+            </li>
+            <li class="clickedPlan"> 
+              <div class="headline">
+                FSTVL LIFE Report
+              </div>
+              <div class="details">
+                <div>
+                  <button class="btn01 active">Project Report</button>
+                </div>
+                <div class="detailImg">
+                  <img src="./image/planning1_01.png" alt="">
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
       <!-- CONTACT_____________________________________ -->
       <section class="contact seven" id="contact">
         <img src="/image/bling.svg" alt="" class="twinkle1">
@@ -265,7 +356,8 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="/js/script.js"></script>
 </body>
 </html>   
