@@ -15,12 +15,12 @@ document.onreadystatechange = function() {
 
 function counter(){
   const count = setInterval(function(){
-    const c = document.getElementById("counter"),
+    const c = document.getElementById("counter");
     int = parseInt(c.textContent); 
     c.textContent = (++int).toString();
     if(int == 100){
       clearInterval(count);
-      c.classList.add("hide");
+      // c.classList.add("hide");
     }
   },60)
 }
@@ -229,6 +229,7 @@ closedBtn.addEventListener('click',(e)=>{
 }); 
  */
 
+
 /* PLANNING_______________________________ */
 //01-클릭할 부분 모두 불러옴
 const buttons = document.querySelectorAll('.headline');
@@ -271,25 +272,89 @@ function removeActiveClasses(){
     } bn
   })
 }) */
-  const planBtn = document.querySelectorAll('.details div>button');
-  const Imgs = document.querySelectorAll('.detailImg'); 
-  planBtn.forEach(button => {
-  button.addEventListener('click', function() {
-      // 모든 형제 버튼에서 'active' 클래스 제거
-      document.planBtn.forEach(btn => {
-          btn.classList.remove('active');
-      });
-      // 클릭된 버튼에 'active' 클래스 추가
-      this.classList.add('active');
-      // 이미지 변경
 
-      Imgs.forEach(img => {
-        const tempSrc = img.getAttribute('src');
-        img.setAttribute('src', img.getAttribute('data-src'));
-        img.setAttribute('data-src', tempSrc);
-      }); 
+
+
+  // const planBtn = document.querySelectorAll('.details div>button');
+  // const Imgs = document.querySelectorAll('.detailImg'); 
+  // planBtn.forEach(button => {
+  // button.addEventListener('click', function() {
+  //     // 모든 형제 버튼에서 'active' 클래스 제거
+  //     document.planBtn.forEach(btn => {
+  //         btn.classList.remove('active');
+  //     });
+  //     // 클릭된 버튼에 'active' 클래스 추가
+  //     this.classList.add('active');
+  //     // 이미지 변경
+
+  //     Imgs.forEach(img=> {
+  //       const tempSrc = img.getAttribute('src');
+  //       img.setAttribute('src', img.dataset.src));
+  //       img.setAttribute(img.dataset.src, tempSrc);
+  //     }); 
+  // });
+
+
+  const planBtn = document.querySelectorAll('.details button');
+  const Imgs = document.querySelectorAll('.detailImg img'); 
+  
+  planBtn.forEach(button =>{
+    button.addEventListener('click', ()=>{
+      planBtn.forEach(btn => btn.classList.remove('active'));
+    });
+    button.classList.add('active'); 
+    const newSrc = button.getAttribute('data-src');
+    Imgs.setAttribute('src', newSrc);
   });
-});
+
+  // planBtn.addEventListener('click', ()=>{
+  //   planBtn.forEach(button =>{
+  //     document.planBtn.forEach(btn =>{
+  //       btn.classList.remove('active');
+  //     });
+  //     this.classList.add('active');
+  //   });
+  //   Imgs.forEach(img => {
+  //     const tempSrc = document.querySelector([data-src]);
+  //     img.setAttribute('src', tempSrc); 
+  // });
+  // })
+
+/*   planBtn.forEach(button => {
+    button.addEventListener('click', function clicked(){
+        // 모든 형제 버튼에서 'active' 클래스 제거
+        document.planBtn.forEach(btn => {
+            btn.classList.remove('active');
+        });
+        // 클릭된 버튼에 'active' 클래스 추가
+        this.classList.add('active');
+        
+        // 이미지 변경
+        Imgs.forEach(img => {
+          const tempSrc = document.querySelector([data-src]);
+          img.setAttribute('src', tempSrc);
+
+          // img.setAttribute(img.dataset.src, tempSrc);
+        }); 
+    });
+    clicked();
+  }); */
+
+
+/* 스크롤링 */
+// let sections = gsap.utils.toArray(".detailImg img");
+
+// gsap.to(sections, {
+//   xPercent: -100 * (sections.length -1),
+//   ease: "none",
+//   scrollTrigger: {
+//     trigger: ".detailImg",
+//     pin: true,
+//     scrub: 1,
+//     snap: 1 / (sections.length -1),
+//     end: "+=7000" //속도가 달라짐
+//   }
+// });
 /* planning slide__________________ */
 // const swiper = new Swiper(".mySwiper", {
 //   slidesPerView: 3,
@@ -302,5 +367,39 @@ function removeActiveClasses(){
 //   navigation: {
 //     nextEl: ".swiper-button-next",
 //     prevEl: ".swiper-button-prev",
-//   },
-// });
+
+    const graphic = {
+      img: [
+        '/image/graphicList1.png',
+        '/image/graphicList2.png',
+        '/image/graphicList3.png',
+        '/image/graphicList4.png',
+        '/image/graphicList5.png',
+        '/image/graphicList6.png',
+        '/image/graphicList7.png',
+        '/image/graphicList8.png',
+        '/image/graphicList9.png'
+      ],
+      h2: [
+        'Advertisement - Trash Busters',
+        'Logo Design',
+        'Promotion - Pethroom',
+        'Advertisement - we are hiring ',
+        'character illustration',
+        'My diary',
+        'promotion - starbucks',
+        'promotion - a voucher card',
+        'a shirt design - when I was young'
+      ]
+    };
+
+    let currentIndex = 0; 
+document.querySelector('.popUp.design .btnSection .nextBtn').addEventListener('click', function() {
+  currentIndex = (currentIndex + 1) % graphic.img.length;
+
+  const graphicImg = document.querySelector(',popUp.design .pop .inform img');
+  const graphicText = document.querySelector('popUp.design h2');
+
+  graphicImg.src = graphic.img[currentIndex];
+  graphicText.textContent = graphic.h2[currentIndex]; 
+});
