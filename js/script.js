@@ -1,6 +1,6 @@
 /* Hamburger__________________________________________________ */
   const hamburger = document.querySelector('.menuHam'); 
-  const menuList = document.querySelector('.menuList'); 
+  const menuList = document.querySelector('.menuList');   
 
   hamburger.addEventListener('click', ()=>{
     if(hamburger.classList.contains('openMenu')){
