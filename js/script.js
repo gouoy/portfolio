@@ -1,115 +1,4 @@
-/* 초기 로딩 작업 _____________________________________________ */
-document.onreadystatechange = function() {
-
-  if (document.readyState !== "complete") {
-      document.getElementById('wrap').style.visibility = "hidden";
-      document.querySelector(
-        "#preloader").style.visibility = "visible";
-  } else {
-      document.querySelector(
-        "#preloader").style.display = "none";
-      document.querySelector(
-        "#wrap").style.visibility = "visible";
-  }
-};
-
-function counter(){
-  const count = setInterval(function(){
-    const c = document.getElementById("counter"),
-    int = parseInt(c.textContent); 
-    c.textContent = (++int).toString();
-    if(int == 100){
-      clearInterval(count);
-      c.classList.add("hide");
-    }
-  },60)
-}
-counter();
-
-/* mouse-cursor event_________________________________*/
-const isTouchDevice = 'ontouchstart' in window;
-
-const createCursorFollower = () => {
-  const $el = document.querySelector('.cursorFollower');
-  
-  // Each time the mouse coordinates are updated, we need to pass the values to gsap in order to animate the element
-  window.addEventListener('mousemove', (e) => {
-    const { target, x, y } = e;
-
-    const isTargetLinkOrBtn = target?.closest('a') || target?.closest('button') || target?.closest('li') || target?.closest('p img');/* || target?.closest(profileBars) */
-
-    gsap.to($el, {
-      x: x+0,
-      y: y-0,
-      duration: 0.7,
-      ease: 'power4', // More easing options here: https://gsap.com/docs/v3/Eases/
-      opacity: isTargetLinkOrBtn ? 0.6 : 1,
-      transform: `scale(${isTargetLinkOrBtn ? 3 : 1})`,
-    });
-  });
-
-  document.addEventListener('mouseleave', (e) => {
-    gsap.to($el, {
-      duration: 0.8,
-      opacity: 0,
-    });
-  });
-}
-
-// Only create the cursor follower if device isn't touchable
-if (!isTouchDevice) {
-  createCursorFollower();
-}
-
-
-
-/* 스크롤포지션 */
-const scroller = document.querySelector(".scrollbar");
-/* scroller.addEventListener("scroll", event => {
-  // console.log(scroller.scrollTop); 
-}); */
-
-scroller.addEventListener("scroll", event =>{
-  let square = document.querySelector('.square');
-  let logo = document.querySelector('.logo'); 
-  let btnScroll = document.querySelector('.btnNav');
-
-  if(scroller.scrollTop <= 750){
-    square.style.display = "flex";
-    logo.style.display = "flex";
-    btnScroll.classList.remove('volgende'); 
-
-    
-  }else if(scroller.scrollTop >= 827){
-    square.style.display = "none"; 
-    logo.style.display = "none";
-    btnScroll.classList.add('volgende'); 
-    };
-})
-
-/*const output = document.querySelector(".output");
-
-scroller.addEventListener("scroll", event => {
-  output.textContent = `scrollTop: ${scroller.scrollTop}`; 
-});  */
-
-/* let square = document.querySelector('.square');
-if(scroller.scrollTop > 820){
-  square.style.display = "none"; 
-  return;
-}else if(scroller.scrollTop == 0){
-  square.style.display = "flex"; 
-}; */
-
-/* pagination */
-const pageCircle = document.querySelectorAll('.btnNav a');
-const btnActive = document.querySelector('#btnActive'); 
-
-
-/* ____________________________________t_______________________________________________________ */
-/* 햄버거 메뉴 열고 닫기  */
-
-
+/* Hamburger__________________________________________________ */
   const hamburger = document.querySelector('.menuHam'); 
   const menuList = document.querySelector('.menuList'); 
 
@@ -123,40 +12,7 @@ const btnActive = document.querySelector('#btnActive');
     }
   })
 
-  // 한국어 버전,영어버전 바꾸기!
-  const korean = document.querySelector('.kor');
-  const english = document.querySelector('.eng');
-
-  /* 프로필 바 */
-  /* const profileBar = document.querySelectorall('.secondRow p img')
-
-  profileBar.forEach(item => {
-    const profileSrc = profileBar.src; 
-    const profileChange = profileBar.getAttribute('data-img');
-
-    item.addEventListener('mouseenter',() =>{
-      profileBar.src = profileChange;
-    });
-    item.addEventListener('mouseleave',() =>{
-      profileBar.src = profileBar; 
-    });
-  }); */
-  const profileBars = document.querySelectorAll('.secondRow p img');
-
-profileBars.forEach(item => {
-  const originalSrc = item.src; // 각 이미지의 기존 src 속성 값
-  const profileChange = item.getAttribute('data-img'); // 각 이미지의 data-img 속성 값
-
-  // mouseenter 이벤트 리스너 추가
-  item.addEventListener('mouseenter', () => {
-    item.src = profileChange;  // 마우스가 요소에 들어왔을 때 이미지 변경
-  });
-
-  // mouseleave 이벤트 리스너 추가
-  item.addEventListener('mouseleave', () => {
-    item.src = originalSrc; // 마우스가 요소에서 벗어났을 때 원래 이미지로 복원
-  });
-});
+//____________________________________________________________________________________
 
 /* Graphic Design , UIUX Design 옮기기 옮기기 옮기기..  */
 const tabMenu = document.querySelector('.five .titleLine');
@@ -178,6 +34,7 @@ tabMenu.addEventListener('click',(e)=>{
 });
 
 /* 모달 창 생성 ________________________ */
+/* 
 const item = document.querySelectorAll('.itemlist li')
 const popUp = document.querySelector('.popUp');
 const modal = document.querySelector('.pop') 
@@ -196,8 +53,109 @@ closedBtn.addEventListener('click',(e)=>{
   modal.getAttribute = 'close';
 
 });
+ */
+
+/* 모달 창 생성 ________________________________________*/
+let item = document.querySelectorAll('.itemlist li')
+let popUp = document.querySelector('.popUp');
+let modal = document.querySelector('.pop') 
+
+item.forEach(function(li){
+  li.addEventListener('click',(e)=>{
+    popUp.style.display = 'flex';
+  });
+})
+
+let closedBtn = document.querySelector('.closed');
+closedBtn.addEventListener('click',(e)=>{
+  popUp.classList.add = 'popClosed';
+  popUp.style.display = 'none';
+});
 
 
+let modalGraphic = document.querySelector('.popUp.design');
+let CloseGraphic = document.querySelector('.popUp.design .closed');
+CloseGraphic.addEventListener('click',(e)=>{
+  // modalGraphic.classList.add = 'popClosed';
+  modalGraphic.style.display = 'none';
+});
+
+
+
+
+
+
+const graphic = {
+  img: [
+    '/image/graphicList1.png',
+    '/image/graphicList2.png',
+    '/image/graphicList3.png',
+    '/image/graphicList4.png',
+    '/image/graphicList5.png',
+    '/image/graphicList6.png',
+    '/image/graphicList7.png',
+    '/image/graphicList8.png',
+    '/image/graphicList9.png'
+  ],
+  h2: [
+    'Advertisement - Trash Busters',
+    'Logo Design',
+    'Promotion - Pethroom',
+    'Advertisement - we are hiring ',
+    'character illustration',
+    'My diary',
+    'promotion - starbucks',
+    'promotion - a voucher card',
+    'a shirt design - when I was young'
+  ]
+};
+
+(function(){
+  let prevBtn = document.querySelector('.btnSection .prevBtn');
+  let nextBtn = document.querySelector('.btnSection .nextBtn');
+  let list1 = document.querySelector('.form1');
+  // let list2 = document.querySelector('.form2 .flexItem:nth-child(${n})');
+  let list2 = document.querySelectorAll('.form2 .flexItem'); 
+  let n = 0; 
+
+  list2.forEach((value)=>{
+    console.log(value);
+  })
+
+})
+
+/*   let graphicList = document.querySelectorAll('.form2 .flexItem');
+  let prevBtn = document.querySelector('.btnSection .prevBtn');
+  let nextBtn = document.querySelector('.btnSection .nextBtn');
+
+
+  let lastIndex = graphicList.length - 1;
+  nextBtn.addEventListener('click', () => {
+    let graphicIMG = document.querySelector('.popUp.design .changedImg');
+    let Names = document.querySelector('.Names'); 
+
+    let index = 0 
+    // 이미지와 제목을 업데이트
+    graphicIMG.src = graphic.img[index];
+    Names.innerText = graphic.h2[index];
+
+    index = index + 1 ; 
+    // 인덱스 증가, 마지막 인덱스 넘으면 0으로 순환
+    index = (index + 1) % graphic.img.length;
+  });
+ */
+
+/*   nextBtn.addEventListener('click',()=>{
+    let graphicIMG = document.querySelector('.popUp.design .changedImg')
+    let Names = document.querySelector('.Names'); 
+    let n= 0 
+    // graphicIMG.getAttribute = 'graphic[img][${n}]';
+    index = n ; 
+    graphicIMG.src = graphic.img[index];
+    Names.innerHTML = graphic.h2[index];
+
+    n = n + 1 ; 
+  }) */
 
 /* 그래픽디자인 팝업창 ... *//* 
 (function(){
@@ -228,6 +186,7 @@ closedBtn.addEventListener('click',(e)=>{
 ];
 }); 
  */
+
 
 /* PLANNING_______________________________ */
 //01-클릭할 부분 모두 불러옴
@@ -271,36 +230,73 @@ function removeActiveClasses(){
     } bn
   })
 }) */
-  const planBtn = document.querySelectorAll('.details div>button');
-  const Imgs = document.querySelectorAll('.detailImg'); 
-  planBtn.forEach(button => {
-  button.addEventListener('click', function() {
-      // 모든 형제 버튼에서 'active' 클래스 제거
-      document.planBtn.forEach(btn => {
-          btn.classList.remove('active');
-      });
-      // 클릭된 버튼에 'active' 클래스 추가
-      this.classList.add('active');
-      // 이미지 변경
 
-      Imgs.forEach(img => {
-        const tempSrc = img.getAttribute('src');
-        img.setAttribute('src', img.getAttribute('data-src'));
-        img.setAttribute('data-src', tempSrc);
-      }); 
+
+
+  // const planBtn = document.querySelectorAll('.details div>button');
+  // const Imgs = document.querySelectorAll('.detailImg'); 
+  // planBtn.forEach(button => {
+  // button.addEventListener('click', function() {
+  //     // 모든 형제 버튼에서 'active' 클래스 제거
+  //     document.planBtn.forEach(btn => {
+  //         btn.classList.remove('active');
+  //     });
+  //     // 클릭된 버튼에 'active' 클래스 추가
+  //     this.classList.add('active');
+  //     // 이미지 변경
+
+  //     Imgs.forEach(img=> {
+  //       const tempSrc = img.getAttribute('src');
+  //       img.setAttribute('src', img.dataset.src));
+  //       img.setAttribute(img.dataset.src, tempSrc);
+  //     }); 
+  // });
+
+
+/*   const planBtn = document.querySelectorAll('.details button');
+  const Imgs = document.querySelectorAll('.detailImg img'); 
+  
+  planBtn.forEach(button =>{
+    button.addEventListener('click', ()=>{
+      planBtn.forEach(btn => btn.classList.remove('active'));
+    });
+    button.classList.add('active'); 
+    const newSrc = button.getAttribute('data-src');
+    Imgs.setAttribute('src', newSrc);
   });
-});
-/* planning slide__________________ */
-// const swiper = new Swiper(".mySwiper", {
-//   slidesPerView: 3,
-//   centeredSlides: true,
-//   spaceBetween: 30,
-//   pagination: {
-//     el: ".swiper-pagination",
-//     type: "fraction",
-//   },
-//   navigation: {
-//     nextEl: ".swiper-button-next",
-//     prevEl: ".swiper-button-prev",
-//   },
-// });
+ */
+  // planBtn.addEventListener('click', ()=>{
+  //   planBtn.forEach(button =>{
+  //     document.planBtn.forEach(btn =>{
+  //       btn.classList.remove('active');
+  //     });
+  //     this.classList.add('active');
+  //   });
+  //   Imgs.forEach(img => {
+  //     const tempSrc = document.querySelector([data-src]);
+  //     img.setAttribute('src', tempSrc); 
+  // });
+  // })
+
+/*   planBtn.forEach(button => {
+    button.addEventListener('click', function clicked(){
+        // 모든 형제 버튼에서 'active' 클래스 제거
+        document.planBtn.forEach(btn => {
+            btn.classList.remove('active');
+        });
+        // 클릭된 버튼에 'active' 클래스 추가
+        this.classList.add('active');
+        
+        // 이미지 변경     Imgs.forEach(img => {
+          const tempSrc = document.querySelector([data-src]);
+          img.setAttribute('src', tempSrc);
+
+          // img.setAttribute(img.dataset.src, tempSrc);
+        }); 
+    });
+    clicked();
+  }); */
+
+
+
+ 

@@ -48,7 +48,7 @@ button:hover, a:hover{
   align-items: center;
   flex-direction: column;
   background-color:#ECE7E1;
-  z-index: 10;
+  z-index: 100;
 }
 #preloader span{font-size:60px;}
 
@@ -592,97 +592,6 @@ section>h3{
   img{height:300px;}
 }
 
-/* _________________________CONTACT_______________________ */
-.contact{
-  text-align: center;
-  margin:auto;
-  position:relative;
-}
-.contact>div{
-  margin-top:8rem;
-}
-.contact div h3{
-  margin-bottom:2rem;
-  font-size:3rem;
-  padding: 0.5rem 2.5rem;
-  display: inline-block;
-  background-color:var(--orange);
-  color:#ECE7E1;
-  border-radius: 3rem;
-}
-.contact p:first-of-type{
-  display:block;
-  margin:auto;
-  width:24rem;
-  padding: 1rem 2rem;
-  background-color: #BEDFFE;
-  border-radius:6rem;
-}
-.contact div p:first-of-type img{
-  height:7rem;
-}
-.contact>span{
-  position:absolute;
-  bottom:0;
-  left:50%;
-  transform:translateX(-50%);
-  font-family: Gotham L;
-  font-size:1.5rem;
-}
-.contact div p:last-of-type{
-  display:flex;
-  align-items:center;
-  justify-content:center ;
-}
-.contact div p:nth-of-type(2){
-  font-size:3rem;
-  margin: 1.5rem 0;
-}
-.contact div p:last-of-type img{
-  width:3rem;
-  height:4rem;
-  padding:0 1rem;
-}
-.twinkle1, .twinkle2{
-  position:absolute;
-  width:7rem;
-  animation: twinkle 1s linear infinite;
-}
-.twinkle1{
-  top:12rem;
-  left:20rem;
-  animation-delay: 0.7s;
-}
-.twinkle2{
-  bottom:12rem;
-  right:20rem;
-  transform:rotate(70deg);
-}
-
-@keyframes twinkle {
-  from{opacity:0;}
-  50%{opacity:0.5;}
-  70%{opacity:1;}
-  to{opacity:0.5;}
-}
-.contact strong{
-  padding: 0.8rem 1.5rem;
-  font-family: Galmuri7;
-  font-size:1rem;
-  border: 5px solid var(--orange);
-  display:inline-block;
-  position:absolute;
-  left:40rem;
-  top:72%;
-  border-radius: 10rem;
-}
-.contact strong+img{
-  position:absolute;
-  top:70%;
-  left:50rem;
-
-}
-
 /* POPUP___________________________________________________________ */
 .popUp{
   position: fixed;
@@ -808,8 +717,9 @@ li.btnSection{
 
 
 
-.popUp.design{display: none;}
-.popUp.design.active{display:flex;}
+/* .popUp.design{display: none;} */
+.active{display:block;}
+
 .popBody.design{
   width:1250px;
 }
@@ -821,3 +731,5 @@ li.btnSection{
   width:1150px;
   height:auto;
 }
+
+/* GraphicDesign 팝업메뉴 슬라이드 */
