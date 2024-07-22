@@ -1,4 +1,119 @@
+<<<<<<< HEAD
 /* Hamburger__________________________________________________ */
+=======
+/* 초기 로딩 작업 _____________________________________________ */
+document.onreadystatechange = function() {
+
+  if (document.readyState !== "complete") {
+      document.getElementById('wrap').style.visibility = "hidden";
+      document.querySelector(
+        "#preloader").style.visibility = "visible";
+  } else {
+      document.querySelector(
+        "#preloader").style.display = "none";
+      document.querySelector(
+        "#wrap").style.visibility = "visible";
+  }
+};
+
+function counter(){
+  const count = setInterval(function(){
+    const c = document.getElementById("counter");
+    int = parseInt(c.textContent); 
+    c.textContent = (++int).toString();
+    if(int == 100){
+      clearInterval(count);
+      // c.classList.add("hide");
+    }
+  },60)
+}
+counter();
+
+/* mouse-cursor event_________________________________*/
+const isTouchDevice = 'ontouchstart' in window;
+
+const createCursorFollower = () => {
+  const $el = document.querySelector('.cursorFollower');
+  
+  // Each time the mouse coordinates are updated, we need to pass the values to gsap in order to animate the element
+  window.addEventListener('mousemove', (e) => {
+    const { target, x, y } = e;
+
+    const isTargetLinkOrBtn = target?.closest('a') || target?.closest('button') || target?.closest('li') || target?.closest('p img');/* || target?.closest(profileBars) */
+
+    gsap.to($el, {
+      x: x+0,
+      y: y-0,
+      duration: 0.7,
+      ease: 'power4', // More easing options here: https://gsap.com/docs/v3/Eases/
+      opacity: isTargetLinkOrBtn ? 0.6 : 1,
+      transform: `scale(${isTargetLinkOrBtn ? 3 : 1})`,
+    });
+  });
+
+  document.addEventListener('mouseleave', (e) => {
+    gsap.to($el, {
+      duration: 0.8,
+      opacity: 0,
+    });
+  });
+}
+
+// Only create the cursor follower if device isn't touchable
+if (!isTouchDevice) {
+  createCursorFollower();
+}
+
+
+
+/* 스크롤포지션 */
+const scroller = document.querySelector(".scrollbar");
+/* scroller.addEventListener("scroll", event => {
+  // console.log(scroller.scrollTop); 
+}); */
+
+scroller.addEventListener("scroll", event =>{
+  let square = document.querySelector('.square');
+  let logo = document.querySelector('.logo'); 
+  let btnScroll = document.querySelector('.btnNav');
+
+  if(scroller.scrollTop <= 750){
+    square.style.display = "flex";
+    logo.style.display = "flex";
+    btnScroll.classList.remove('volgende'); 
+
+    
+  }else if(scroller.scrollTop >= 827){
+    square.style.display = "none"; 
+    logo.style.display = "none";
+    btnScroll.classList.add('volgende'); 
+    };
+})
+
+/*const output = document.querySelector(".output");
+
+scroller.addEventListener("scroll", event => {
+  output.textContent = `scrollTop: ${scroller.scrollTop}`; 
+});  */
+
+/* let square = document.querySelector('.square');
+if(scroller.scrollTop > 820){
+  square.style.display = "none"; 
+  return;
+}else if(scroller.scrollTop == 0){
+  square.style.display = "flex"; 
+}; */
+
+/* pagination */
+const pageCircle = document.querySelectorAll('.btnNav a');
+const btnActive = document.querySelector('#btnActive'); 
+
+
+/* ____________________________________t_______________________________________________________ */
+/* 햄버거 메뉴 열고 닫기  */
+
+
+>>>>>>> 2c083fc5ea056a7ea0a1576ea38b2b62c6e87f27
   const hamburger = document.querySelector('.menuHam'); 
   const menuList = document.querySelector('.menuList'); 
 
@@ -253,7 +368,11 @@ function removeActiveClasses(){
   // });
 
 
+<<<<<<< HEAD
 /*   const planBtn = document.querySelectorAll('.details button');
+=======
+  const planBtn = document.querySelectorAll('.details button');
+>>>>>>> 2c083fc5ea056a7ea0a1576ea38b2b62c6e87f27
   const Imgs = document.querySelectorAll('.detailImg img'); 
   
   planBtn.forEach(button =>{
@@ -264,7 +383,11 @@ function removeActiveClasses(){
     const newSrc = button.getAttribute('data-src');
     Imgs.setAttribute('src', newSrc);
   });
+<<<<<<< HEAD
  */
+=======
+
+>>>>>>> 2c083fc5ea056a7ea0a1576ea38b2b62c6e87f27
   // planBtn.addEventListener('click', ()=>{
   //   planBtn.forEach(button =>{
   //     document.planBtn.forEach(btn =>{
@@ -287,7 +410,12 @@ function removeActiveClasses(){
         // 클릭된 버튼에 'active' 클래스 추가
         this.classList.add('active');
         
+<<<<<<< HEAD
         // 이미지 변경     Imgs.forEach(img => {
+=======
+        // 이미지 변경
+        Imgs.forEach(img => {
+>>>>>>> 2c083fc5ea056a7ea0a1576ea38b2b62c6e87f27
           const tempSrc = document.querySelector([data-src]);
           img.setAttribute('src', tempSrc);
 
@@ -298,5 +426,70 @@ function removeActiveClasses(){
   }); */
 
 
+<<<<<<< HEAD
 
  
+=======
+/* 스크롤링 */
+// let sections = gsap.utils.toArray(".detailImg img");
+
+// gsap.to(sections, {
+//   xPercent: -100 * (sections.length -1),
+//   ease: "none",
+//   scrollTrigger: {
+//     trigger: ".detailImg",
+//     pin: true,
+//     scrub: 1,
+//     snap: 1 / (sections.length -1),
+//     end: "+=7000" //속도가 달라짐
+//   }
+// });
+/* planning slide__________________ */
+// const swiper = new Swiper(".mySwiper", {
+//   slidesPerView: 3,
+//   centeredSlides: true,
+//   spaceBetween: 30,
+//   pagination: {
+//     el: ".swiper-pagination",
+//     type: "fraction",
+//   },
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev",
+
+    const graphic = {
+      img: [
+        '/image/graphicList1.png',
+        '/image/graphicList2.png',
+        '/image/graphicList3.png',
+        '/image/graphicList4.png',
+        '/image/graphicList5.png',
+        '/image/graphicList6.png',
+        '/image/graphicList7.png',
+        '/image/graphicList8.png',
+        '/image/graphicList9.png'
+      ],
+      h2: [
+        'Advertisement - Trash Busters',
+        'Logo Design',
+        'Promotion - Pethroom',
+        'Advertisement - we are hiring ',
+        'character illustration',
+        'My diary',
+        'promotion - starbucks',
+        'promotion - a voucher card',
+        'a shirt design - when I was young'
+      ]
+    };
+
+    let currentIndex = 0; 
+document.querySelector('.popUp.design .btnSection .nextBtn').addEventListener('click', function() {
+  currentIndex = (currentIndex + 1) % graphic.img.length;
+
+  const graphicImg = document.querySelector(',popUp.design .pop .inform img');
+  const graphicText = document.querySelector('popUp.design h2');
+
+  graphicImg.src = graphic.img[currentIndex];
+  graphicText.textContent = graphic.h2[currentIndex]; 
+});
+>>>>>>> 2c083fc5ea056a7ea0a1576ea38b2b62c6e87f27
